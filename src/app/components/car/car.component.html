@@ -1,1 +1,49 @@
-<p>car works!</p>
+<div class="container">
+
+  <br>
+  <h4><mark>Автомобиль:</mark>{{name}}</h4>
+  <small>{{model}}</small>
+
+  <div class="alert alert-success">Характеристики автомобиля:
+    <ul>
+      <li>Скорость: <strong>{{speed}} км/ч</strong></li>
+      <li>Цвет автомобиля: <strong>{{colors?.car}}</strong></li>
+      <li>Цвет салона: <strong>{{colors?.salon}}</strong></li>
+      <li>Цвет колес: <strong>{{colors?.wheels}}</strong></li>
+    </ul>
+  </div>
+
+  <h5>Редактирование объекта</h5>
+  <div class="form-group">
+    <input type="text" placeholder="Название машины" class="form-control" [(ngModel)]="name" name="name"><br>
+    <input type="text" placeholder="Модель машины" class="form-control" [(ngModel)]="model" name="model"><br>
+  </div>
+  <br>
+
+
+
+  <h5>Возможности автомобиля</h5>
+  <form (submit)="addOpt(option.value)">
+    <div class="form-group">
+      <label for="options">Добавление новой возможности:</label>
+      <input type="text" id="options" placeholder="Введите что-то" class="form-control" #option>
+      <br>
+      <button type="submit" class="btn-success">Добавить</button>
+    </div>
+    <br>
+  </form>
+
+
+  <div class="alert alert-warning">
+    <ul>
+      <li *ngFor="let opt of options; let i = index">{{i+1}}-{{opt}}
+        <button class="btn btn-warning btn-sm" (click)="deleteOpt(opt)">x</button>
+      </li>
+    </ul>
+  </div>
+
+  <h5>Выберете автомобиль</h5>
+  <button class="btn btn-danger" (click)="carSelect('bmw')">BMW</button>
+  <button class="btn btn-success" (click)="carSelect('audi')">Audi</button>
+  <button class="btn btn-info" (click)="carSelect('mercedes')">Mercedes</button>
+</div>
