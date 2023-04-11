@@ -13,6 +13,7 @@ export class CarComponent implements OnInit {
   colors: Colors | undefined;
   options: string[] | any;
   test: any;
+  isEdit: boolean = false;
 
   constructor() { }
 
@@ -31,6 +32,10 @@ export class CarComponent implements OnInit {
     this.test = 1;
   }
 
+  showEdit() {
+    this.isEdit = !this.isEdit;
+  }
+
   addOpt(option: string) {
     this.options?.unshift(option);
     return false;
@@ -47,7 +52,7 @@ export class CarComponent implements OnInit {
   };
 
   carSelect(carName: string) {
-    if (carName == 'bmw') {
+    if (carName == 'BMW') {
       this.name = 'BMW';
       this.speed = 280;
       this.model = 'M5';
@@ -58,7 +63,7 @@ export class CarComponent implements OnInit {
       }
       this.options = ["Система трека", "ABS", "Автопилот", "Авто паркинг"];
       this.test = 1;
-    } else if (carName == 'audi') {
+    } else if (carName == 'Audi') {
       this.name = 'Audi';
       this.speed = 235;
       this.model = 'RS8';
@@ -69,7 +74,7 @@ export class CarComponent implements OnInit {
       }
       this.options = ["ABS", "Автопилот", "Круиз контроль", "Авто паркинг"];
       this.test = 1;
-    } else if (carName == 'mercedes') {
+    } else if (carName == 'Mercedes') {
       this.name = 'Mercedes';
       this.speed = 235;
       this.model = 'C180';

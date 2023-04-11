@@ -14,13 +14,18 @@
   </div>
 
   <h5>Редактирование объекта</h5>
-  <div class="form-group">
-    <input type="text" placeholder="Название машины" class="form-control" [(ngModel)]="name" name="name"><br>
-    <input type="text" placeholder="Модель машины" class="form-control" [(ngModel)]="model" name="model"><br>
+  <button class="btn-danger" (click)="showEdit()">Редактировать</button>
+  <div>
+    <br>
   </div>
-  <br>
-
-
+  <form *ngIf="isEdit">
+    <div class="form-group">
+      <input type="text" placeholder="Название машины" class="form-control" [(ngModel)]="name" name="name"><br>
+      <input type="text" placeholder="Модель машины" class="form-control" [(ngModel)]="model" name="model"><br>
+      <input type="number" placeholder="Скорость" class="form-control" [(ngModel)]="speed" name="speed"><br>
+    </div>
+    <br>
+  </form>
 
   <h5>Возможности автомобиля</h5>
   <form (submit)="addOpt(option.value)">
