@@ -41,8 +41,8 @@
 
   <div class="alert alert-warning">
     <ul>
-      <li *ngFor="let opt of options; let i = index">{{i+1}}-{{opt}}
-        <button class="btn btn-warning btn-sm" (click)="deleteOpt(opt)">x</button>
+      <li *ngFor="let opt of options; let i = index">
+        {{i+1}}-{{opt}} <button class="btn btn-warning btn-sm" (click)="deleteOpt(opt)">x</button>
       </li>
     </ul>
   </div>
