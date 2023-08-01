@@ -44,10 +44,9 @@ export class CarComponent implements OnInit {
   deleteOpt(option: string) {
     for (let i = 0; i < this.options?.length; i++) {
       if (this.options[i] == option) {
-        this.options?.slice(i, 1);
+        this.options?.splice(i, 1);
         break;
       }
-
     }
   };
 
@@ -94,7 +93,5 @@ interface Colors {
   salon: string;
   wheels: string;
 }
-function bmwSelect() {
-  throw new Error('Function not implemented.');
-}
+
 
